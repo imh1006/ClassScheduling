@@ -1,0 +1,178 @@
+﻿<Window x:Class="Schedule_WPF.AddClassDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Schedule_WPF"
+        mc:Ignorable="d"
+        Title="Add a Class" Height="550" Width="1000" Icon="images/add.png" RenderOptions.BitmapScalingMode="HighQuality" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}" x:Key="SmallTextBox">
+            <Setter Property="Width" Value="70"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10,0,0,0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}" x:Key="LargeTextBox">
+            <Setter Property="Width" Value="275"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10,0,0,0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#dddddd">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="95"/>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="#016648" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="9">
+            <TextBlock VerticalAlignment="Center" FontSize="25" Margin="50,0,0,0" Foreground="#ffffff">Add a class</TextBlock>
+        </Grid>
+        <TextBlock FontSize="16" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Height="22">Term</TextBlock>
+        <TextBox Name="Term_Text" Grid.Row="1" Grid.Column="2" Style="{StaticResource SmallTextBox}" HorizontalAlignment="Center" Margin="0,2,0,8" Width="70"></TextBox>
+        <TextBlock FontSize="16" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Height="22">Session</TextBlock>
+        <TextBox Name="Session_Text" Grid.Row="2" Grid.Column="2" Style="{StaticResource SmallTextBox}" Margin="0,2,0,8" Width="70" HorizontalAlignment="Center"/>
+        <TextBlock FontSize="16" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Height="20">CRN</TextBlock>
+        <TextBox Name="CRN_Text" Grid.Row="3" Grid.Column="2" Style="{StaticResource SmallTextBox}" HorizontalAlignment="Center" Margin="0,1,0,9" Width="70" RenderTransformOrigin="0.468,2.57"/>
+        <TextBlock FontSize="16" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Height="22">Department</TextBlock>
+        <TextBox Name="Dept_Text" Grid.Row="4" Grid.Column="2" Style="{StaticResource SmallTextBox}" HorizontalAlignment="Center" Margin="0,1,0,9" Width="70"/>
+        <TextBlock FontSize="16" Grid.Row="5" Grid.Column="1" VerticalAlignment="Top" Height="22" Margin="0,7,0,0">Class Number</TextBlock>
+        <TextBox Name="ClassNum_Text" Grid.Row="5" Grid.Column="2" Style="{StaticResource SmallTextBox}" HorizontalAlignment="Center" Margin="0,3,0,7" Width="70"/>
+        <TextBlock FontSize="16" Grid.Row="6" Grid.Column="1" VerticalAlignment="Top" Height="21" Margin="0,2,0,0">Section</TextBlock>
+        <TextBox Name="Section_Text" Grid.Row="6" Grid.Column="2" Style="{StaticResource SmallTextBox}" HorizontalAlignment="Center" Margin="0,2,0,8" Width="70"/>
+        <TextBlock FontSize="16" Grid.Row="1" Grid.Column="5" VerticalAlignment="Center" Height="20">Start Date</TextBlock>
+        <DatePicker  Grid.Column="6" Grid.Row="1" Height="24" HorizontalAlignment="Left" Name="StartDate" VerticalAlignment="Center" Width="115"  SelectedDateChanged="CorrectDates"/>
+        <TextBlock FontSize="16" Grid.Row="2" Grid.Column="5" VerticalAlignment="Top" Height="21" Margin="0,4,0,0">End Date</TextBlock>
+        <DatePicker  Grid.Column="6" Grid.Row="2" Height="25" HorizontalAlignment="Left" Name="EndDate" VerticalAlignment="Top" Width="115" Margin="0,4,0,0"  SelectedDateChanged="CorrectDates" />
+        <TextBlock FontSize="16" Grid.Row="3" Grid.Column="5" VerticalAlignment="Center" Height="20">Name</TextBlock>
+        <TextBox Name="Name_Text" Grid.Row="3" Grid.Column="6" Style="{StaticResource LargeTextBox}" Margin="0,5,0,5" Width="222"/>
+        <TextBlock FontSize="16" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Height="22" Margin="0,0,52,0" Grid.ColumnSpan="2">Enrolled</TextBlock>
+        <TextBox Name="Enrolled_Text" Grid.Row="7" Grid.Column="2" Style="{StaticResource SmallTextBox}" Margin="0,5,0,5" Width="70" HorizontalAlignment="Center"/>
+        <TextBlock FontSize="16" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" Height="22" Margin="0,0,40,0">Waitlist</TextBlock>
+        <TextBox Name="Waitlist_Text" Grid.Row="8" Grid.Column="2" Style="{StaticResource SmallTextBox}" Margin="0,1,0,9" Width="70" HorizontalAlignment="Center"/>
+
+        <TextBlock FontSize="16" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" Height="22" Margin="0,0,40,0">Max Seats</TextBlock>
+        <TextBox Name="MaxSeats_Text" Grid.Row="9" Grid.Column="2" Style="{StaticResource SmallTextBox}" Margin="0,2,0,8" Width="70" HorizontalAlignment="Center"/>
+        <TextBlock FontSize="16" Grid.Row="10" Grid.Column="1" VerticalAlignment="Center" Height="22" Margin="0,0,40,0">Proj Seats</TextBlock>
+        <TextBox Name="ProjSeats_Text" Grid.Row="10" Grid.Column="2" Style="{StaticResource SmallTextBox}" Margin="0,4,0,6" Width="70" HorizontalAlignment="Center"/>
+        <TextBlock FontSize="16" Grid.Row="4" Grid.Column="5" VerticalAlignment="Top" Height="22" Margin="0,11,0,0">Credits</TextBlock>
+        <TextBox Name="Credits_Text" Grid.Row="4" Grid.Column="6" Style="{StaticResource SmallTextBox}" Margin="0,3,0,7" Width="222"/>
+        <TextBlock FontSize="16" Grid.Row="5" Grid.Column="5" VerticalAlignment="Top" Height="22" Margin="0,6,0,0">Professor</TextBlock>
+        <ComboBox Name="Prof_Text" Grid.Row="5" Grid.Column="6" Width="222" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,5,0,8">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding FullName}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock FontSize="16" Grid.Row="6" Grid.Column="5" VerticalAlignment="Top" Height="22" Margin="0,11,0,0">Crosslist</TextBlock>
+        <TextBox Name="Crosslist_Text" Grid.Row="6" Grid.Column="6" Style="{StaticResource SmallTextBox}" Margin="0,5,0,5" Width="222"/>
+        <TextBlock FontSize="16" Grid.Row="8" Grid.Column="5" VerticalAlignment="Top" Height="21" Margin="0,1,0,0">Type</TextBlock>
+        <StackPanel Grid.Row="8" Grid.Column="6" Margin="0,0,178,9" Grid.RowSpan="2">
+            <RadioButton IsChecked="True" Name="InClass_Box">In-Class</RadioButton>
+            <RadioButton Name="Online_Box">WEB</RadioButton>
+            <RadioButton Name="Appointment_Box">APPT</RadioButton>
+            <RadioButton Name="Appointment2_Box">APPT2</RadioButton>
+        </StackPanel>
+        <Button Grid.Row="10" Grid.Column="4" HorizontalAlignment="Left" Width="180" Click="Button_Click"  FontSize="16" Margin="90,29,0,2" Background="LightGray" Grid.ColumnSpan="3" Grid.RowSpan="2">Submit</Button>
+        <!-- Validation Notifications -->
+        <StackPanel Name="Term_Required" Grid.Row="1" Grid.Column="2" Visibility="Hidden"  Margin="68,11,2,11" Grid.ColumnSpan="2">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="Term is required! --- If Term has not been determined, enter 1" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Term_Invalid" Grid.Row="1" Grid.Column="3" Visibility="Hidden"  Margin="0,11,0,9">
+            <Image Source="images/warning.png" Height="20" ToolTip="Invalid Term! --- If Term has not been determined, enter 1" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Session_Required" Grid.Row="2" Grid.Column="3" Visibility="Hidden" Margin="0,9,0,10">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="Session is required! --- If Session has not been determined, enter 1" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Session_Invalid" Grid.Row="2" Grid.Column="3" Visibility="Hidden"  Margin="0,10,0,10">
+            <Image Source="images/warning.png" Height="20" ToolTip="Invalid Session! --- If Session has not been determined, enter 1" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="CRN_Required" Grid.Row="3" Grid.Column="2" Visibility="Hidden"  Margin="68,8,2,6" Grid.ColumnSpan="2">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="CRN is required! --- If CRN has not been determined, enter NEW" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="CRN_Invalid" Grid.Row="3" Grid.Column="3" Visibility="Hidden" Margin="0,7,0,7">
+            <Image Source="images/warning.png" Height="20" ToolTip="Invalid CRN! --- If CRN has not been determined, enter NEW" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Dept_Required" Grid.Row="4" Grid.Column="2" Visibility="Hidden"  Margin="68,8,2,12" Grid.ColumnSpan="2">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="Department is required!" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Dept_Invalid" Grid.Row="4" Grid.Column="3"  Visibility="Hidden"  Margin="0,8,0,8">
+            <Image Source="images/warning.png" Height="20" ToolTip="Invalid Department!\n(Must contain less than 5 letters. E.g. CPSC)" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Number_Required" Grid.Row="5" Grid.Column="3" Visibility="Hidden"  Margin="0,10,0,8">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="Class number is required!" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Number_Invalid" Grid.Row="5" Grid.Column="3" Visibility="Hidden" Margin="0,12,0,7">
+            <Image Source="images/warning.png" Height="20" ToolTip="Invalid class number! (Must be 3 digits long)" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Section_Required" Grid.Row="6" Grid.Column="3" Visibility="Hidden"  Margin="2,5,98,10" Grid.ColumnSpan="2">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="Class section number required!" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Section_Invalid" Grid.Row="6" Grid.Column="2" Visibility="Hidden"  Margin="68,8,2,10" Grid.ColumnSpan="2">
+            <Image Source="images/warning.png" Height="20" ToolTip="Invalid section number! (0-99)" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Name_Required" Grid.Row="3" Grid.Column="7" Visibility="Hidden"  Margin="0,10,0,3">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="Class name is required!" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Enrolled_Required" Grid.Row="7" Grid.Column="3" Visibility="Hidden"  Margin="4,10,0,5">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="Enrolled is required! If current enrollment is unknown, enter '0'." RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Enrolled_Invalid" Grid.Row="7" Grid.Column="3" Visibility="Hidden" Margin="0,9,0,4">
+            <Image Source="images/warning.png" Height="20" ToolTip="Invalid number for Enrolled! If current enrollment is unknown, enter '0'." RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Waitlist_Required" Grid.Row="8" Grid.Column="3" Visibility="Hidden"  Margin="4,10,0,33" Grid.RowSpan="2">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="Waitlist is required! If waitlist is unknown, enter '0'." RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Waitlist_Invalid" Grid.Row="8" Grid.Column="3" Visibility="Hidden"  Margin="3,6,2,4">
+            <Image Source="images/warning.png" Height="20" ToolTip="Invalid number for waitlist! If waitlist is unknown, enter '0'." RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="MaxSeats_Required" Grid.Row="9" Grid.Column="3" Visibility="Hidden" Margin="0,9,0,34" Grid.RowSpan="2">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="Max seats is required!" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="MaxSeats_Invalid" Grid.Row="9" Grid.Column="3" Visibility="Hidden" Margin="2,9,2,1">
+            <Image Source="images/warning.png" Height="20" ToolTip="Invalid number for max seats!" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="ProjSeats_Required" Grid.Row="10" Grid.Column="3" Visibility="Hidden" Margin="0,9,0,34" Grid.RowSpan="2">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="Proj seats is required!" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="ProjSeats_Invalid" Grid.Row="10" Grid.Column="3" Visibility="Hidden" Margin="2,9,2,1">
+            <Image Source="images/warning.png" Height="20" ToolTip="Invalid number for proj seats!" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Credits_Required" Grid.Row="4" Grid.Column="7" Visibility="Hidden"  Margin="0,3,0,7">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="Number of credits required!" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Credits_Invalid" Grid.Row="4" Grid.Column="7" Visibility="Hidden" Margin="0,3,0,7">
+            <Image Source="images/warning.png" Height="20" ToolTip="Invalid number of credits!" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="Prof_Required" Grid.Row="5" Grid.Column="7" Margin="0,3,0,7">
+            <Image Source="images/warning_2.png" Height="20" ToolTip="Professor required!" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+        <StackPanel Name="EndDate_Invalid" Grid.Row="2" Grid.Column="7"  Visibility="Hidden" Margin="0,10,0,5">
+            <Image Source="images/warning.png" Height="20" ToolTip="Invalid date range! An alternative end date has been assigned." RenderOptions.BitmapScalingMode="HighQuality"/>
+        </StackPanel>
+    </Grid>
+</Window>

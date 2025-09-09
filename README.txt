@@ -1,0 +1,2 @@
+-Download .NET 4.8 developer version
+- In the project change Target Framework to 4.8

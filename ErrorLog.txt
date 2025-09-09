@@ -1,0 +1,7 @@
+9/9/2025 6:09:29 PM
+The value found for MAX_SEATS in row 15 of the schedule is larger than the ROOM_CAP for its assigned room. Please move the class to a new classroom or reduce the max seats.
+The value found for PROJ_SEATS in row 15 of the schedule is larger than the ROOM_CAP for its assigned room. Please move the class to a new classroom or reduce the projected seats.
+The value found for PROJ_SEATS in row 15 of the schedule is higher than the ROOM_CAP for its assigned room. Please move the class to a new classroom or reduce the projected seats.
+The value found for MAX_SEATS in row 15 of the schedule is higher than the ROOM_CAP for its assigned room. Please move the class to a new classroom or reduce the max seats.
+The faculty ID number for professor Lutz, Roger does not match the ID number listed in their profile.
+Conflict: CYBR 401 At: R 06:00 - 08:30 Timeslot already taken! Moving class to unassigned classes list

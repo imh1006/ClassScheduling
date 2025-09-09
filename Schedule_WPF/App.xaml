@@ -1,0 +1,48 @@
+﻿<Application x:Class="Schedule_WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Schedule_WPF"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:kz="clr-namespace:Schedule_WPF.Models"
+             StartupUri="FileSelect.xaml">
+    <Application.Resources>
+        <kz:ProfessorList x:Key="Professor_List_View"/>
+        <kz:ClassList x:Key="Classes_List_View"/>
+        <kz:ClassList x:Key="Unassigned_Classes_List_View"/>
+        <kz:ClassList x:Key="Online_Classes_List_View"/>
+        <kz:ClassList x:Key="Appointment_Classes_List_View"/>
+        <kz:ClassList x:Key="Appointment2_Classes_List_View"/>
+        <kz:ClassList x:Key="Deleted_Classes_List_View"/>
+        <kz:ClassRoomList x:Key="ClassRoom_List_View"/>
+        <kz:ClassList x:Key="Single_Day_Classes_List_View"/>
+        <kz:Pairs x:Key="ColorPairs_List_View"/>
+        <kz:ProfessorPreferenceList x:Key="ProfPreference_List_View"/>
+        <kz:ClassGroupList x:Key="ClassGroup_List_View"/>
+        <sys:String x:Key="FilePath">none</sys:String>
+        <sys:Boolean x:Key="MainLoaded">false</sys:Boolean>
+        <!-- Variables to store info from AddClassRoomDialog -->
+        <sys:Boolean x:Key="Set_ClassRoom_Success">false</sys:Boolean>
+        <sys:String x:Key="Set_ClassRoom_Bldg">---</sys:String>
+        <sys:Int32 x:Key="Set_ClassRoom_Num">000</sys:Int32>
+        <sys:Int32 x:Key="Set_ClassRoom_Seats">000</sys:Int32>
+        <!-- Variables to store info from AddCProfessorDialog -->
+        <sys:Boolean x:Key="Set_Prof_Success">false</sys:Boolean>
+        <sys:String x:Key="Set_Prof_FN">---</sys:String>
+        <sys:String x:Key="Set_Prof_LN">---</sys:String>
+        <sys:String x:Key="Set_Prof_ID">---</sys:String>
+        <sys:String x:Key="Set_Prof_Color">---</sys:String>
+        <!-- Variables to store info from AddClassDialog -->
+        <sys:Boolean x:Key="Set_Class_Success">false</sys:Boolean>
+        <sys:String x:Key="Set_Class_Dept">---</sys:String>
+        <sys:String x:Key="Set_Class_Name">---</sys:String>
+        <sys:String x:Key="Set_Class_Professor">---</sys:String>
+        <sys:String x:Key="Set_Class_CRN">000</sys:String>
+        <sys:Int32 x:Key="Set_Class_Number">000</sys:Int32>
+        <sys:Int32 x:Key="Set_Class_Section">000</sys:Int32>
+        <sys:Int32 x:Key="Set_Class_Credits">000</sys:Int32>
+        <sys:Boolean x:Key="Set_Class_Online">false</sys:Boolean>
+        <sys:Boolean x:Key="Set_Class_Appointment">false</sys:Boolean>
+        <sys:Boolean x:Key="Set_Class_Appointment2">false</sys:Boolean>
+        <sys:Boolean x:Key="Edit_Class_Check">false</sys:Boolean>
+    </Application.Resources>
+</Application>
